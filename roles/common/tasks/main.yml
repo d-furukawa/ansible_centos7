@@ -1,0 +1,68 @@
+---
+- name: selinux disabled
+  become: true
+  replace: dest=/etc/selinux/config regexp='SELINUX=enforcing' replace='SELINUX=disabled' backup=yes
+
+- name: setterm blank 0
+  become: true
+  command: echo "/usr/bin/setterm -blank 0" >> /etc/rc.local
+
+- name: yum update
+  become: true
+  command: yum update -y
+
+- name: man install
+  become: true
+  yum: name=man state=present
+
+- name: wget install
+  become: true
+  yum: name=wget state=present
+
+- name: lftp install
+  become: true
+  yum: name=lftp state=present
+
+- name: vim-enhanced install
+  become: true
+  yum: name=vim-enhanced state=present
+
+- name: dos2unix install
+  become: true
+  yum: name=dos2unix state=present
+
+- name: screen install
+  become: true
+  yum: name=screen state=present
+
+- name: bind-utils install
+  become: true
+  yum: name=bind-utils state=present
+
+- name: hdparm install
+  become: true
+  yum: name=hdparm state=present
+
+- name: lsof install
+  become: true
+  yum: name=lsof state=present
+
+- name: jwhois install
+  become: true
+  yum: name=jwhois state=present
+
+- name: nkf install
+  become: true
+  yum: name=nkf state=present
+
+- name: expect install
+  become: true
+  yum: name=expect state=present
+
+- name: pwgen install
+  become: true
+  yum: name=pwgen state=present
+
+- name: jq install
+  become: true
+  yum: name=jq state=present
